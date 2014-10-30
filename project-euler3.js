@@ -13,17 +13,12 @@ function problemThree(input) {
 //Iteratively divides the input by the denominator if it divides 
 //evenly; increments up the denominator if not.
 
-        for (var denominator = 2; denominator <= input;) { 
-            while (input >= 2) {
-		        if (input % denominator === 0) {
-			        input/=denominator;
-		        }
-		        else {
-			        denominator++;
-		        }
-	        }
-        }
-    console.log(denominator);
+        for (var denominator = 2; input >= denominator; denominator++) { 
+            while (input % denominator === 0) {
+    		        input /= denominator;
+		  }
+	   }
+        console.log(denominator-1);
     }
 }
 
