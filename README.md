@@ -1,4 +1,4 @@
 project-euler
 =============
 
-3 Project Euler solutions in javascript
+Project Euler solutions in javascript and ruby
