@@ -44,7 +44,7 @@ if (limit < 2 || isNaN(limit) || limit > 4000000) {
 $('#three').click(function() {
 	var limit=parseInt($('#questionThree').val(),10);
     if (limit < 2 || isNaN(limit) || limit > 600851475143) {
-        confirm("Please enter a number greater than 1 and less than 4,000,000");
+        confirm("Please enter a number greater than 1 and less than 600,851,475,143");
     }
     else {
         for (var denominator = 2; limit >= denominator; denominator++) { 
