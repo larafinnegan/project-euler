@@ -41,7 +41,6 @@ if (limit < 2 || isNaN(limit) || limit > 4000000) {
     }
 });
 
-
 $('#three').click(function() {
 	var limit=parseInt($('#questionThree').val(),10);
     if (limit < 2 || isNaN(limit) || limit > 600851475143) {
