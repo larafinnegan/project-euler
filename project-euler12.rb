@@ -150,7 +150,34 @@ def triangle_divisors7(max)
   sum
 end
 
-# below are the run times for each of the 7 methods.
+# decided not to store the factors themselves but rather a count
+# of the factors.  Realized that any number n has 2 corresponding 
+# factors, one greater than sqrt(n) and one less than sqrt(n).  
+# If a factor is equal to the square root, it is 
+# only counted once.  This shaved off even more processing time.
+
+def triangle_divisors8(max)
+  sum = 1
+  n = 2
+  factors = 0
+
+  until factors > max
+    factors = 0
+    sum += n
+    divisor = 1
+    square_root = Math.sqrt(sum)
+    while divisor <= square_root
+      if sum % divisor == 0
+        divisor < square_root ? factors += 2 : factors += 1
+      end
+      divisor += 1
+    end
+    n += 1
+  end
+  sum
+end
+
+# below are the run times for each of the 8 methods.
 # I'm using a Chromebook so there's not a ton of processing power.
 
 # 1  19.310000   0.010000  19.320000 ( 19.436888)
@@ -160,20 +187,24 @@ end
 # 5   0.350000   0.000000   0.350000 (  0.348422)
 # 6   0.200000   0.000000   0.200000 (  0.198549)
 # 7   0.130000   0.000000   0.130000 (  0.128517)
+# 8   0.050000   0.000000   0.050000 (  0.059492)
 
 
-p triangle_divisors1(140)
-p triangle_divisors2(140)
-p triangle_divisors3(140)
-p triangle_divisors4(140)
-p triangle_divisors5(140)
-p triangle_divisors6(140)
-p triangle_divisors7(140)
 
-puts Benchmark.measure { triangle_divisors1(140) }
-puts Benchmark.measure { triangle_divisors2(140) }
-puts Benchmark.measure { triangle_divisors3(140) }
-puts Benchmark.measure { triangle_divisors4(140) }
-puts Benchmark.measure { triangle_divisors5(140) }
-puts Benchmark.measure { triangle_divisors6(140) }
-puts Benchmark.measure { triangle_divisors7(140) }
+#p triangle_divisors1(140)
+#p triangle_divisors2(140)
+#p triangle_divisors3(140)
+#p triangle_divisors4(140)
+#p triangle_divisors5(140)
+#p triangle_divisors6(140)
+#p triangle_divisors7(140)
+p triangle_divisors8(140)
+
+#puts Benchmark.measure { triangle_divisors1(140) }
+#puts Benchmark.measure { triangle_divisors2(140) }
+#puts Benchmark.measure { triangle_divisors3(140) }
+#puts Benchmark.measure { triangle_divisors4(140) }
+#puts Benchmark.measure { triangle_divisors5(140) }
+#puts Benchmark.measure { triangle_divisors6(140) }
+#puts Benchmark.measure { triangle_divisors7(140) }
+puts Benchmark.measure { triangle_divisors8(140) }
