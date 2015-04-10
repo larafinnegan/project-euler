@@ -10,7 +10,6 @@ def prime?(max)
     end
     n += 2
   end
-  p primes[-2..-1]
   primes[0..-2].reduce(:+)
 end
 

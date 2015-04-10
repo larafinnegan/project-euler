@@ -1,3 +1,5 @@
+require 'benchmark'
+
 def collatz(max)
   hash = {1 => 1}
   num = max
@@ -14,7 +16,7 @@ def collatz(max)
     end
     num -= 1
   end
-  p hash.max_by {|k, v| v }
+  hash.max_by {|k, v| v }
 end
 
 collatz(1000000)
