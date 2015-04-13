@@ -1,18 +1,16 @@
 def questionTwo (limit)
 
-    i=1
-    j=1
-    total=0
+    i = 1
+    j = 1
+    total = 0
     
     while j <= limit
         sum = i + j
-        i=j
-        j=sum
-        if sum % 2 == 0
-            total += sum
-        end
+        i = j
+        j = sum
+        total += sum if sum % 2 == 0
     end
-    puts total
+    total
 end
 
-questionTwo (34)
+p questionTwo (34)
