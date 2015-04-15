@@ -197,8 +197,8 @@ end
 #p triangle_divisors4(140)
 #p triangle_divisors5(140)
 #p triangle_divisors6(140)
-#p triangle_divisors7(140)
-p triangle_divisors8(140)
+#p triangle_divisors7(500)
+p triangle_divisors8(500)
 
 #puts Benchmark.measure { triangle_divisors1(140) }
 #puts Benchmark.measure { triangle_divisors2(140) }
@@ -206,5 +206,5 @@ p triangle_divisors8(140)
 #puts Benchmark.measure { triangle_divisors4(140) }
 #puts Benchmark.measure { triangle_divisors5(140) }
 #puts Benchmark.measure { triangle_divisors6(140) }
-#puts Benchmark.measure { triangle_divisors7(140) }
-puts Benchmark.measure { triangle_divisors8(140) }
+#puts Benchmark.measure { triangle_divisors7(500) }
+puts Benchmark.measure { triangle_divisors8(500) }
